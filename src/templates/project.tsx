@@ -110,7 +110,7 @@ export const query = graphql`
         }
       }
     }
-    placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    placeholderImage: file(relativePath: { eq: "coding-laptop-1.jpg" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid
