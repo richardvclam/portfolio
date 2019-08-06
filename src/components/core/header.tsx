@@ -32,7 +32,7 @@ const Nav = styled.nav`
 const navOptions = [
   { title: "Projects", to: "/projects", disable: !appConfig.enableProjects },
   { title: "Blog", to: "/blog", disable: !appConfig.enableBlog },
-  { title: "Contact", to: "/contact" },
+  { title: "Contact", to: "/contact", disable: true },
 ]
 
 const Header = () => (
