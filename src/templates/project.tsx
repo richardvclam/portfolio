@@ -6,6 +6,7 @@ import Markdown from "react-markdown"
 import styled from "styled-components"
 import { space, SpaceProps } from "styled-system"
 import Layout from "../components/core/layout"
+import SEO from "../components/seo"
 import Tags from "../components/tags"
 
 import theme from "../config/theme"
@@ -41,6 +42,7 @@ const IconLink = styled.a`
 const ProjectTemplate = ({ data }) => {
   return (
     <Layout>
+      <SEO title={data.strapiProject.name} />
       <ImageContainer>
         <Img
           fluid={
