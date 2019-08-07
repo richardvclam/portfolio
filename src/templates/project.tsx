@@ -8,8 +8,7 @@ import { space, SpaceProps } from "styled-system"
 import Layout from "../components/core/layout"
 import SEO from "../components/seo"
 import Tags from "../components/tags"
-
-import theme from "../config/theme"
+import IconLink from "../components/iconlink"
 
 import { ITag } from "../types/models"
 
@@ -28,16 +27,6 @@ const Box = styled.article<SpaceProps>(
   },
   space
 )
-
-const IconLink = styled.a`
-  color: inherit;
-  transition: color 0.15s ease-in-out;
-  padding: 8px;
-
-  &:hover {
-    color: ${theme.primary};
-  }
-`
 
 const ProjectTemplate = ({ data }) => {
   return (
