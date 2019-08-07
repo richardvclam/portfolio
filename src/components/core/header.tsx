@@ -33,6 +33,7 @@ const navOptions = [
   { title: "Projects", to: "/projects", disable: !appConfig.enableProjects },
   { title: "Blog", to: "/blog", disable: !appConfig.enableBlog },
   { title: "Contact", to: "/contact", disable: true },
+  { title: "Resume", href: "/resume.pdf" },
 ]
 
 const Header = () => (
@@ -59,6 +60,16 @@ const Header = () => (
           {navOptions.map(nav => {
             if (nav.disable) {
               return null
+            }
+
+            if (nav.href) {
+              return (
+                <li key={nav.title}>
+                  <a href={nav.href} target="_blank">
+                    <span style={{ fontWeight: "bold" }}>{nav.title}</span>
+                  </a>
+                </li>
+              )
             }
 
             return (
