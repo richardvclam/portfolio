@@ -1,8 +1,8 @@
-import React from "react"
+import * as React from "react"
 import styled from "styled-components"
 import Tag from "./tag"
 
-interface IProps {
+interface ITagsProps extends React.HTMLAttributes<HTMLDivElement> {
   tags: string[]
 }
 
@@ -17,7 +17,7 @@ const Tags = styled.div`
   }
 `
 
-export default ({ tags, style }: IProps) => (
+export default ({ tags, style }: ITagsProps) => (
   <Tags style={style}>
     {tags.map(tag => (
       <Tag key={tag} className="tag">

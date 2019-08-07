@@ -37,13 +37,17 @@ const IndexPage = ({ data }) => (
     <section style={{ marginBottom: 300 }}>
       <h2>Skills</h2>
 
-      <h3 style={{}}>Languages</h3>
+      <div style={{ marginBottom: 10 }}>
+        <strong>Languages</strong>
+      </div>
       <Tags
         tags={["JavaScript", "HTML", "CSS", "PHP", "Java", "SQL"]}
         style={{ marginBottom: 26 }}
       />
 
-      <h3>Technologies</h3>
+      <div style={{ marginBottom: 10 }}>
+        <strong>Technologies</strong>
+      </div>
       <Tags
         tags={[
           "React",
@@ -69,7 +73,9 @@ const IndexPage = ({ data }) => (
         style={{ marginBottom: 26 }}
       />
 
-      <h3>Tools & Other</h3>
+      <div style={{ marginBottom: 10 }}>
+        <strong>Tools & Other</strong>
+      </div>
       <Tags
         tags={[
           "AWS EC2",
