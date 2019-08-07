@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => (
     <section style={{ marginBottom: 300 }}>
       <h2>Skills</h2>
 
-      <h3>Languages</h3>
+      <h3 style={{}}>Languages</h3>
       <Tags
         tags={["JavaScript", "HTML", "CSS", "PHP", "Java", "SQL"]}
         style={{ marginBottom: 26 }}

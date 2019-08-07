@@ -19,6 +19,11 @@ const CardContainer = styled.article`
   border-radius: 10px;
   box-shadow: 6px 2px 24px 8px rgba(0, 0, 0, 0.08);
   height: 100%;
+  transition: all 0.25s;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
 `
 
 const ImageContainer = styled.figure`
@@ -63,7 +68,9 @@ const Card: React.FunctionComponent<IProps> = ({
         <h3 style={{ marginBottom: `0.5rem` }}>{title}</h3>
         {description && <p style={{ marginBottom: `0.5rem` }}>{description}</p>}
 
-        {tags && <Tags tags={tags.map(tag => tag.name)} />}
+        {tags && (
+          <Tags tags={tags.map(tag => tag.name)} style={{ marginTop: 20 }} />
+        )}
       </Content>
     </CardContainer>
   )
