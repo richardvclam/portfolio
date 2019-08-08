@@ -20,6 +20,13 @@ const ImageContainer = styled.figure`
   border-radius: 10px;
 `
 
+const MarkdownContainer = styled.div`
+  img[src*="#center"] {
+    display: block;
+    margin: auto;
+  }
+`
+
 const Box = styled.article<SpaceProps>(
   {
     boxSizing: "border-box",
@@ -72,7 +79,9 @@ const ProjectTemplate = ({ data }) => {
           )}
         </header>
 
-        <Markdown source={data.strapiProject.content} />
+        <MarkdownContainer>
+          <Markdown source={data.strapiProject.content} escapeHtml={false} />
+        </MarkdownContainer>
       </Box>
     </Layout>
   )
