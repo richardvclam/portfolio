@@ -117,7 +117,7 @@ const IndexPage = ({ data }) => (
     )}
 
     <section style={{ marginBottom: `5rem` }}>
-      <h2>Projects</h2>
+      <h2>Featured projects</h2>
       <Container fluid={true} style={{ padding: 0 }}>
         <Row>
           {data.allStrapiProject.edges.map(project => (

@@ -4,20 +4,20 @@ import React from "react"
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
 import Markdown from "react-markdown"
 import styled from "styled-components"
+import { format } from "date-fns"
 import { space, SpaceProps } from "styled-system"
 import Layout from "../components/core/layout"
+import IconLink from "../components/iconlink"
 import SEO from "../components/seo"
 import Tags from "../components/tags"
-import IconLink from "../components/iconlink"
 
 import { ITag } from "../types/models"
 
 const ImageContainer = styled.figure`
   max-height: 400px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
   overflow: hidden;
-  border-radius: 10px;
+  // border-radius: 10px;
 `
 
 const MarkdownContainer = styled.div`
@@ -39,6 +39,38 @@ const ProjectTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={data.strapiProject.name} />
+
+      <header style={{ margin: `30px 0` }}>
+        <div
+          style={{
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <h1 style={{ marginBottom: 0 }}>{data.strapiProject.name}</h1>
+          <div>
+            {data.strapiProject.link && (
+              <IconLink href={data.strapiProject.link} target="_blank">
+                <FaExternalLinkAlt size={22} />
+              </IconLink>
+            )}
+            {data.strapiProject.github && (
+              <IconLink href={data.strapiProject.github} target="_blank">
+                <FaGithub size={22} />
+              </IconLink>
+            )}
+          </div>
+        </div>
+        <div style={{ fontSize: "0.9rem", color: "#777777", marginBottom: 10 }}>
+          {format(new Date(data.strapiProject.createdAt), "dd MMMM yyyy")}
+        </div>
+
+        {data.strapiProject.techs && (
+          <Tags tags={data.strapiProject.techs.map((tag: ITag) => tag.name)} />
+        )}
+      </header>
+
       <ImageContainer>
         <Img
           fluid={
@@ -49,36 +81,7 @@ const ProjectTemplate = ({ data }) => {
         />
       </ImageContainer>
 
-      <Box p={[0, 40]} pt={20}>
-        <header style={{ marginBottom: 40 }}>
-          <div
-            style={{
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <h1 style={{ marginBottom: 10 }}>{data.strapiProject.name}</h1>
-            <div>
-              {data.strapiProject.link && (
-                <IconLink href={data.strapiProject.link} target="_blank">
-                  <FaExternalLinkAlt size={22} />
-                </IconLink>
-              )}
-              {data.strapiProject.github && (
-                <IconLink href={data.strapiProject.github} target="_blank">
-                  <FaGithub size={22} />
-                </IconLink>
-              )}
-            </div>
-          </div>
-          {data.strapiProject.techs && (
-            <Tags
-              tags={data.strapiProject.techs.map((tag: ITag) => tag.name)}
-            />
-          )}
-        </header>
-
+      <Box p={[0, 60]} pt={[0, 0]}>
         <MarkdownContainer>
           <Markdown source={data.strapiProject.content} escapeHtml={false} />
         </MarkdownContainer>
@@ -100,6 +103,8 @@ export const query = graphql`
       }
       github
       link
+      createdAt
+      updatedAt
       image {
         childImageSharp {
           fluid(quality: 100) {

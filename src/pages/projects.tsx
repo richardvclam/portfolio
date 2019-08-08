@@ -41,7 +41,7 @@ export default ProjectsPage
 
 export const pageQuery = graphql`
   query ProjectsQuery {
-    allStrapiProject {
+    allStrapiProject(sort: { order: DESC, fields: createdAt }) {
       edges {
         node {
           id
