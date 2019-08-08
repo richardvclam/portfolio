@@ -21,6 +21,12 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-100920084-1",
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,

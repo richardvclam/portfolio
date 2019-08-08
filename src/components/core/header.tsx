@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import React from "react"
 import styled from "styled-components"
 
@@ -65,9 +66,9 @@ const Header = () => (
             if (nav.href) {
               return (
                 <li key={nav.title}>
-                  <a href={nav.href} target="_blank">
+                  <OutboundLink href={nav.href} target="_blank">
                     <span style={{ fontWeight: "bold" }}>{nav.title}</span>
-                  </a>
+                  </OutboundLink>
                 </li>
               )
             }
