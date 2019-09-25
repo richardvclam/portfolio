@@ -34,7 +34,7 @@ const navOptions = [
   { title: "Projects", to: "/projects", disable: !appConfig.enableProjects },
   { title: "Blog", to: "/blog", disable: !appConfig.enableBlog },
   { title: "Contact", to: "/contact", disable: true },
-  { title: "Resume", href: "/resume.pdf" },
+  { title: "Resume", href: "/resume.pdf", disable: true },
 ]
 
 const Header = () => (

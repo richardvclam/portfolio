@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
 
-    <section style={{ marginBottom: 300 }}>
+    {/* <section style={{ marginBottom: 300 }}>
       <h2>Skills</h2>
 
       <div style={{ marginBottom: 10 }}>
@@ -94,7 +94,7 @@ const IndexPage = ({ data }) => (
         tags={["OOP", "FP", "MVC", "SSL", "Authentication", "Encryption"]}
         style={{ marginBottom: 26 }}
       />
-    </section>
+    </section> */}
 
     {appConfig.enableBlog && (
       <section style={{ marginBottom: `5rem` }}>
@@ -146,8 +146,8 @@ const IndexPage = ({ data }) => (
     <section style={{ textAlign: "center", padding: "150px 0" }}>
       <h2 style={{ fontSize: `2rem` }}>Get In Touch</h2>
       <p>
-        I am currently looking for new opportunities. Please feel free to
-        contact me.
+        Although I'm not currently looking for new opportunities, my inbox is
+        always open. Please feel free to contact me.
       </p>
 
       <Button href="mailto:richardvclam@gmail.com">Say hello</Button>
